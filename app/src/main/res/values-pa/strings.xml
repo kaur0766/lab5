@@ -3,4 +3,26 @@
     <string name="app_name">ਪੰਜਾਬੀ</string>
     <string name="hello_message">ਸਤਿ ਸ੍ਈ ਅਕਾਲ</string>
     <string name="ButtonText">ਬਟਨ</string>
+    <string name ="click_here">ਇੱਥੇ ਕਲਿੱਕ ਕਰੋ</string>
+    <string name="gui">Lab 2 GUI</string>
+    <string name="swi">Switch On/Off></string>
+    <string name="android_labs">Android Labs</string>
+
+    <string name="hint">ਇੱਥੇ ਨਾਮ ਦਰਜ ਕਰੋ</string>
+
+
+    <string name="cto">ਇਸਨੂੰ ਚੈੱਕ ਕਰੋ</string>
+
+    <string name="toastMsg">ਇੱਥੇ ਹੋਰ ਜਾਣਕਾਰੀ ਹੈ</string>
+
+    <string name="login">ਲਾਗਿਨ</string>
+    <string name="enter_your_email_address">ਆਪਣਾ ਈਮੇਲ ਪਤਾ ਦਰਜ ਕਰੋ</string>
+    <string name="Type_your_password">ਆਪਣਾ ਪਾਸਵਰਡ ਟਾਈਪ ਕਰੋ</string>
+    <string name="your_profile">ਤੁਹਾਡੀ_ਪ੍ਰੋਫਾਇਲ</string>
+    <string name="your_name">ਤੁਹਾਡਾ ਨਾਮ</string>
+    <string name="enter_your_name">ਤੁਹਾਡਾ ਨਾਮ ਦਰਜ ਕਰੋ</string>
+    <string name="your_email">ਤੁਹਾਡਾ ਈਮੇਲ</string>
+    <string name="enter_your_email">ਆਪਣਾ ਈ - ਮੇਲ ਭਰੋ</string>
+    <string name="your_picture">ਤੁਹਾਡੀ ਤਸਵੀਰ</string>
+    <string name="click_the_button_above_to_take_picture">ਤਸਵੀਰ ਲੈਣ ਲਈ ਉੱਪਰ ਤੇ ਬਟਨ ਤੇ ਕਲਿੱਕ ਕਰੋ</string>
 </resources>

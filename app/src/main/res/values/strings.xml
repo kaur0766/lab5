@@ -2,4 +2,28 @@
     <string name="app_name">AndroidLab</string>
     <string name="hello_message">Hello world</string>
     <string name="ButtonText">I\'m a button</string>
+    <string name ="click_here">Click Here</string>
+    <string name="gui">Lab 2 GUI</string>
+
+
+    <string name="swi">Switch On/Off></string>
+    <string name="android_labs">Android Labs</string>
+
+    <string name="hint">Enter Name Here</string>
+
+
+    <string name="cto">Check this out</string>
+
+    <string name="toastMsg">Here is\n more information</string>
+
+    <string name="login">Login</string>
+    <string name="enter_your_email_address">Enter your email address</string>
+    <string name="Type_your_password">Type your password</string>
+    <string name="your_profile">Your profile</string>
+    <string name="your_name">Your name:</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="your_email">Your email:</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="your_picture">Your picture:</string>
+    <string name="click_the_button_above_to_take_picture">Click the button above to take picture</string>
 </resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource"
+    android:id="@+id/constraintLayout">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/gui"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
+        android:textSize="34sp"
+
+        tools:ignore="MissingConstraints"></TextView>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/flag"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"></ImageButton>
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="70dp"
+        android:gravity="fill"
+        android:onClick="displayToastMsg"
+
+        android:text="@string/ButtonText"
+        app:layout_constraintHorizontal_weight="1"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="MissingConstraints"></Button>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_weight="1"
+        android:minHeight="48dp"
+        android:text="@string/swi"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="MissingConstraints"></Switch>
+
+    <EditText
+        android:layout_width="407dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:hint="@string/hint"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-12dp"></EditText>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

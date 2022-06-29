@@ -19,6 +19,8 @@
         <activity
             android:name=".MainLinearActivity"
             android:exported="true" />
+
+        <activity android:name=".ChatRoomActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

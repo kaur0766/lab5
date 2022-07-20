@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.cst2335.myapplication.database.MessageDatabaseSource;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,19 @@ public class ChatRoomActivity extends AppCompatActivity {
     private EditText edtMessage;
 
     private List<Message> listMessage;
+    private MessageDatabaseSource messageDatabaseSource;
+
+    @Override
+    protected void onResume() {
+        messageDatabaseSource.open();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        messageDatabaseSource.close();
+        super.onPause();
+    }
 
 
     @Override
@@ -32,17 +47,23 @@ public class ChatRoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
 
+        messageDatabaseSource = new MessageDatabaseSource(this);
+        messageDatabaseSource.open();
+        messageDatabaseSource.fetchAllMessage();
+
         listChat = findViewById(R.id.listChat);
         btnSend = findViewById(R.id.btnSend);
         btnReceive = findViewById(R.id.btnReceive);
         edtMessage = findViewById(R.id.edtMessage);
 
-        listMessage = new ArrayList<>();
+        listMessage = messageDatabaseSource.getAllMessages();
         ChatAdappter chatAdappter = new ChatAdappter();
         listChat.setAdapter(chatAdappter);
-        listChat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listChat.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(ChatRoomActivity.this);
                 builder.setTitle("Alert");
@@ -52,8 +73,10 @@ public class ChatRoomActivity extends AppCompatActivity {
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        messageDatabaseSource.deleteMessage(chatAdappter.getItemId(position));
                         listMessage.remove(position);
                         chatAdappter.notifyDataSetChanged();
+
                     }
                 });
 
@@ -65,6 +88,7 @@ public class ChatRoomActivity extends AppCompatActivity {
                 });
 
                 builder.create().show();
+                return false;
             }
         });
 
@@ -80,6 +104,7 @@ public class ChatRoomActivity extends AppCompatActivity {
                 listMessage.add(message);
                 chatAdappter.notifyDataSetChanged();
                 edtMessage.setText("");
+                messageDatabaseSource.saveMessage(message);
             }
         });
 
@@ -96,6 +121,7 @@ public class ChatRoomActivity extends AppCompatActivity {
                 listMessage.add(message);
                 chatAdappter.notifyDataSetChanged();
                 edtMessage.setText("");
+                messageDatabaseSource.saveMessage(message);
             }
         });
 
@@ -116,7 +142,7 @@ public class ChatRoomActivity extends AppCompatActivity {
 
         @Override
         public long getItemId(int i) {
-            return i;
+            return listMessage.get(i).getId();
         }
 
 
